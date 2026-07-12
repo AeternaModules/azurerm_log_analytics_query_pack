@@ -1,3 +1,7 @@
+output "log_analytics_query_packs_id" {
+  description = "Map of id values across all log_analytics_query_packs, keyed the same as var.log_analytics_query_packs"
+  value       = { for k, v in azurerm_log_analytics_query_pack.log_analytics_query_packs : k => v.id }
+}
 output "log_analytics_query_packs_location" {
   description = "Map of location values across all log_analytics_query_packs, keyed the same as var.log_analytics_query_packs"
   value       = { for k, v in azurerm_log_analytics_query_pack.log_analytics_query_packs : k => v.location }
